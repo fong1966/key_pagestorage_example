@@ -22,8 +22,6 @@ class _ListViewPageStorageKeyPageState
       );
 
   Widget buildBottomBar() {
-    final style = TextStyle(color: Colors.white);
-
     return BottomNavigationBar(
       backgroundColor: Theme.of(context).primaryColor,
       selectedItemColor: Colors.white,
@@ -32,11 +30,11 @@ class _ListViewPageStorageKeyPageState
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.clear),
-          title: Text('ListView', style: style),
+          label: 'ListView',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.done),
-          title: Text('Key ListView', style: style),
+          label: 'Key ListView',
         ),
       ],
       onTap: (int index) => setState(() => this.index = index),

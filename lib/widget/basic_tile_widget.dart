@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class BasicTile {
   final String title;
-  final List<BasicTile> tiles;
+  final List<BasicTile> listTiles;
 
   const BasicTile({
     required this.title,
-    this.tiles = const [],
+    this.listTiles = const [],
   });
 }
 
@@ -21,7 +21,7 @@ class BasicTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = tile.title;
-    final tiles = tile.tiles;
+    final tiles = tile.listTiles;
 
     if (tiles.isEmpty) {
       return ListTile(
@@ -46,22 +46,28 @@ class BasicTileWidget extends StatelessWidget {
 }
 
 final basicTiles = <BasicTile>[
-  BasicTile(title: 'Countries', tiles: [
-    BasicTile(title: 'Russia'),
-    BasicTile(title: 'Canada'),
-    BasicTile(title: 'USA'),
-    BasicTile(title: 'China'),
-    BasicTile(title: 'China'),
-    BasicTile(title: 'Australia'),
-    BasicTile(title: 'India'),
-    BasicTile(title: 'Argentina'),
-  ]),
-  BasicTile(title: 'Dates', tiles: [
-    BasicTile(title: '2020', tiles: buildMonths()),
-    BasicTile(title: '2021', tiles: buildMonths()),
-    BasicTile(title: '2022'),
-    BasicTile(title: '2023'),
-  ]),
+  BasicTile(
+    title: 'Countries',
+    listTiles: [
+      BasicTile(title: 'Russia'),
+      BasicTile(title: 'Canada'),
+      BasicTile(title: 'USA'),
+      BasicTile(title: 'China'),
+      BasicTile(title: 'China'),
+      BasicTile(title: 'Australia'),
+      BasicTile(title: 'India'),
+      BasicTile(title: 'Argentina'),
+    ],
+  ),
+  BasicTile(
+    title: 'Dates',
+    listTiles: [
+      BasicTile(title: '2020', listTiles: buildMonths()),
+      BasicTile(title: '2021', listTiles: buildMonths()),
+      BasicTile(title: '2022'),
+      BasicTile(title: '2023'),
+    ],
+  ),
 ];
 
 List<BasicTile> buildMonths() => [
@@ -75,5 +81,5 @@ List<BasicTile> buildMonths() => [
 
 BasicTile buildMonth(String month) => BasicTile(
       title: month,
-      tiles: List.generate(28, (index) => BasicTile(title: '$index.')),
+      listTiles: List.generate(28, (index) => BasicTile(title: '$index.')),
     );

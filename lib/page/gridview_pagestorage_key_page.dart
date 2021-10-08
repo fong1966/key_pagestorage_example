@@ -30,8 +30,6 @@ class _GridViewPageStorageKeyPageState
       );
 
   Widget buildBottomBar() {
-    final style = TextStyle(color: Colors.white);
-
     return BottomNavigationBar(
       backgroundColor: Theme.of(context).primaryColor,
       selectedItemColor: Colors.white,
@@ -40,11 +38,11 @@ class _GridViewPageStorageKeyPageState
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.clear),
-          title: Text('GridView', style: style),
+          label: 'GridView',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.done),
-          title: Text('Key GridView', style: style),
+          label: 'Key GridView',
         ),
       ],
       onTap: (int index) => setState(() => this.index = index),
