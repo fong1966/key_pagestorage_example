@@ -1,16 +1,5 @@
 import 'package:flutter/material.dart';
 
-class MyApp1 extends StatelessWidget {
-  const MyApp1({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage1(),
-    );
-  }
-}
-
 class MyHomePage1 extends StatefulWidget {
   const MyHomePage1({Key? key}) : super(key: key);
 
@@ -68,7 +57,7 @@ class ColorBoxPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemExtent: 250.0,
+      itemExtent: 50.0,
       itemBuilder: (BuildContext context, int index) => Container(
         padding: const EdgeInsets.all(10.0),
         child: Material(
